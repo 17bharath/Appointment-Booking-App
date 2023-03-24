@@ -29,6 +29,10 @@
             } else {
                 document.getElementById('message').innerHTML = `Thank you, ${name}! Your appointment on ${date} at ${time} has been booked.`;
             }
+
+            localStorage.setItem('name', name)
+            localStorage.setItem('date', date)
+            localStorage.setItem('time', time)
         });
 
     </script>
