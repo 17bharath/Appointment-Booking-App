@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Appointment Booking App</title>
+</head>
+
+<body>
+    <h1>Appointment Booking App</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br><br>
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time"><br><br>
+        <button type="button" id="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+    <script>
+        const submitBtn = document.getElementById('submit');
+        submitBtn.addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            if (name === '' || date === '' || time === '') {
+                document.getElementById('message').innerHTML = 'Please fill in all fields.';
+            } else {
+                document.getElementById('message').innerHTML = `Thank you, ${name}! Your appointment on ${date} at ${time} has been booked.`;
+            }
+        });
+
+    </script>
+</body>
+
+</html>
